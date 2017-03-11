@@ -6,17 +6,18 @@ class Ed2kCalculator < Formula
     # :revision => "ab2798d0006973970735c580fdd7dec4acb4acf5"
   version "1.0.0"
 
-  # depends_on "cmake" => :build
+  # depends_on "" => :build
 
   def install
     dotnet="/usr/local/share/dotnet/dotnet"
     projectFile="./Ed2kCalculator/project.json"
+    publishDir = Dir.mktmpdir
     unless File.file?(dotnet)
-      odie ".NET Core is required. Please refer to https://www.microsoft.com/net/core#macos for more info."
+      odie ".NET Core is required. Please download from https://www.microsoft.com/net/core#macos ."
     end
     system dotnet, "restore", projectFile
-    system dotnet, "publish", projectFile, "--configuration", "Release"
-    libexec.install Dir["./Ed2kCalculator/bin/Release/netcoreapp1.0/publish/*"]
+    system dotnet, "publish", projectFile, "--configuration", "Release", "--output", publishDir
+    libexec.install Dir["#{publishDir}/*"]
     bin.install "ed2kcalc"
   end
 
@@ -34,3 +35,4 @@ end
 # http://deeeet.com/writing/2014/05/20/brew-tap/
 # http://stackoverflow.com/questions/22272176/making-a-homebrew-formula
 # http://stackoverflow.com/questions/8590098/how-to-check-for-file-existence
+# https://github.com/Homebrew/homebrew-core/blob/3584718a331d3a15856238e5c5219fbfae4885e0/Formula/mysql.rb
