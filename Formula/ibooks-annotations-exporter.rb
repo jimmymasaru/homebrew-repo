@@ -2,8 +2,8 @@ class IbooksAnnotationsExporter < Formula
   desc "iBooks Annotations Exporter"
   homepage "https://github.com/jimmymasaru/ibooksannotationsexporter"
   url "https://github.com/jimmymasaru/ibooksannotationsexporter.git",
-    :tag => "1.0.2"
-  version "1.0.2"
+    :tag => "1.0.3"
+  version "1.0.3"
 
   def install
     bin.install "ibooksnotes"
