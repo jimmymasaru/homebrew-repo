@@ -1,7 +1,7 @@
 class Ed2kCalculator < Formula
   desc "Ed2k Hash Calculator"
-  homepage "https://github.com/jimmymasaru/ed2kcalculator"
-  url "https://github.com/jimmymasaru/ed2kcalculator.git",
+  homepage "https://github.com/jimmymasaru/ed2k-calc"
+  url "https://github.com/jimmymasaru/ed2k-calc.git",
     :tag => "1.0.0"
     # :revision => "ab2798d0006973970735c580fdd7dec4acb4acf5"
   version "1.0.0"
@@ -23,7 +23,7 @@ class Ed2kCalculator < Formula
 
   def post_install
     inreplace "#{bin}/ed2kcalc", "\#destination\#", "#{opt_prefix}/libexec/Ed2kCalculator.dll"
-    ohai "Run Ed2k Hash Calculator by 'ed2kcalc'."
+    ohai "Run 'ed2kcalc'."
   end
 
   test do
