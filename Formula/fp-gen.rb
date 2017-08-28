@@ -2,8 +2,8 @@ class FpGen < Formula
   desc "iOS Font Profile Generator"
   homepage "https://github.com/jimmymasaru/fp-gen/"
   url "https://github.com/jimmymasaru/fp-gen.git",
-    :tag => "1.0.0"
-  version "1.0.0"
+    :tag => "1.0.1"
+  version "1.0.1"
 
   depends_on "node" => :run
 
