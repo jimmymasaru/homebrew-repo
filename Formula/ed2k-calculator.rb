@@ -2,18 +2,18 @@ class Ed2kCalculator < Formula
   desc "Ed2k Hash Calculator"
   homepage "https://github.com/jimmymasaru/ed2k-calc"
   url "https://github.com/jimmymasaru/ed2k-calc.git",
-    :tag => "1.0.0"
+    :tag => "1.1.0"
     # :revision => "ab2798d0006973970735c580fdd7dec4acb4acf5"
-  version "1.0.0"
+  version "1.1.0"
 
-  # depends_on "" => :build
+  # depends_on "dotnet" => :run # not supported by brew
 
   def install
-    dotnet="/usr/local/share/dotnet/dotnet"
-    projectFile="./Ed2kCalculator/project.json"
+    dotnet = "/usr/local/share/dotnet/dotnet"
+    projectFile = "Ed2kCalculator.sln"
     publishDir = Dir.mktmpdir
     unless File.file?(dotnet)
-      odie ".NET Core is required. Please download from https://www.microsoft.com/net/core#macos ."
+      odie ".NET Core 2.0 is required. Please download from https://www.microsoft.com/net/core#macos ."
     end
     system dotnet, "restore", projectFile
     system dotnet, "publish", projectFile, "--configuration", "Release", "--output", publishDir
