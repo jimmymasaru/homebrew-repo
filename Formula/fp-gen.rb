@@ -5,8 +5,6 @@ class FpGen < Formula
     :tag => "1.0.1"
   version "1.0.1"
 
-  depends_on "node" => :run
-
   def install
     system "/usr/local/bin/npm", "install"
     ohai "Installing components ..."
