@@ -5,8 +5,6 @@ class IdsTools < Formula
     :tag => "1.0.0"
   version "1.0.0"
 
-  depends_on "node" => :run
-
   def install
     system "/usr/local/bin/npm", "install"
     opoo "Initializing local IDS database. This could take a few minutes."
