@@ -3,7 +3,8 @@ class FpGen < Formula
   homepage "https://github.com/jimmymasaru/fp-gen/"
   url "https://github.com/jimmymasaru/fp-gen.git",
     :tag => "1.0.1"
-  version "1.0.1"
+  version "1.0.1.2"
+  depends_on "node"
 
   def install
     system "/usr/local/bin/npm", "install"
@@ -17,6 +18,6 @@ class FpGen < Formula
   end
 
   def post_install
-    ohai "Run 'fpgen'."
+    ohai "Run 'fpgen' for more infomation."
   end
 end
