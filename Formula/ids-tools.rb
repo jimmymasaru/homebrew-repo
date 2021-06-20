@@ -2,8 +2,8 @@ class IdsTools < Formula
   desc "IDS (Ideographic Description Sequence) Tools"
   homepage "https://github.com/jimmymasaru/ids-tools/"
   url "https://github.com/jimmymasaru/ids-tools.git",
-    :tag => "1.0.0"
-  version "1.0.0"
+    :tag => "1.1.0"
+  version "1.1.0"
 
   def install
     system "/usr/local/bin/npm", "install"
